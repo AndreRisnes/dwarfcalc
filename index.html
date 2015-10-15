@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="formstyler" class="formcontainer">
+            <form id="form" name="form" method="post" action="index.html">
+                <h1>Dwarf mining speed calculator</h1>
+                <p>Enter your dwarf config and click "Mine" to see the mining speed.</p>
+
+                <label for="stone_hp">Stone HP:
+                    <span class="explanation">Hit points per inch and square foot.</span>
+                </label>
+                <input id="stone_hp" type="number" value="15" />
+
+                <label for="stone_hardness">Stone Hardness:
+                    <span class="explanation">&nbsp;</span>
+                </label>
+                <input id="stone_hardness" type="number" value="8" />
+
+                <label for="damage_dice">Weapon Dice:
+                    <span class="explanation">Weapon/mining tool damage dice.</span>
+                </label>
+                <select id="damage_dice">
+                    <option value="D4">D4</option>
+                    <option value="D6">D6</option>
+                    <option value="D8" selected="selected">D8</option>
+                    <option value="D10">D10</option>
+                    <option value="D12">D12</option>
+                    <option value="2D6">2D6</option>
+                </select>
+
+                <label for="damage_bonus">Damage Bonus:
+                    <span class="explanation">Weapon/tool damage bonus from STR etc.</span>
+                </label>
+                <input id="damage_bonus" type="number" value="4" />
+
+                <label for="adamantine">Adamantine:
+                    <span class="explanation">Check if the weapon/tool is made from Adamantine</span>
+                </label>
+                <input id="adamantine" type="checkbox" />
+
+                <label for="concurrent_dwarves">Dwarves:
+                    <span class="explanation">Number of dwarves that can mine simultaneously at the rock face</span>
+                </label>
+                <input id="concurrent_dwarves" type="number" value="4" />
+
+                <label for="total_volume">Volume to mine:
+                    <span class="explanation">Total volume to mine in cubic feet.</span>
+                </label>
+                <input id="total_volume" type="text" value="10 * 10 * 200" />
+
+                <div class="buttoncenter">
+                    <button type="button" id="mine_button">Mine!</button>
+                </div>
+            </form>
+        </div>
+
+        <p class="darr">&darr;</p>
+
+        <div id="resultstyler" class="resultcontainer">
+            <span class="result">Cubic feet mined per shift per dwarf: <span id="cubic_feet_per_shift_per_dwarf">?</span> </span>
+            <span class="result">Cubic feet mined per shift for all dwarves: <span id="cubic_feet_per_shift">?</span> </span>
+            <span class="result">Cubic feet mined per day for all dwarves: <span id="cubic_feet_per_day">?</span> </span>
+            <span class="result">Total time of mining operation: <span id="total_time">?</span> days.</span>
+        </div>
+    </body>
+</html>
